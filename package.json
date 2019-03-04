@@ -1,0 +1,52 @@
+{
+  "name": "reco-ecommerce",
+  "version": "1.0.0",
+  "description": "Backend for Reco App",
+  "main": "reco.js",
+  "engines": {
+    "npm": "6.8.0",
+    "node": "10.14.1"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node reco.js",
+    "dev": "nodemon reco.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ahsankhan1911/reco-ecommerce.git"
+  },
+  "keywords": [
+    "ecommerce",
+    "react",
+    "app"
+  ],
+  "author": "Ahsan Khan",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^0.17.1",
+    "bcrypt": "^3.0.4",
+    "bluebird": "^3.5.3",
+    "body-parser": "^1.17.1",
+    "bunyan": "^1.8.12",
+    "bunyan-debug-stream": "^2.0.0",
+    "compression": "^1.7.1",
+    "cookie-parser": "^1.4.3",
+    "dotenv": "^4.0.0",
+    "express": "^4.15.2",
+    "jsonwebtoken": "^8.5.0",
+    "lodash": "^4.17.11",
+    "multer": "^1.4.1",
+    "mysql2": "^1.6.5",
+    "path": "^0.12.7",
+    "randomstring": "^1.1.5",
+    "sequelize": "^4.43.0"
+  },
+  "bugs": {
+    "url": "https://github.com/ahsankhan1911/reco-ecommerce/issues"
+  },
+  "homepage": "https://github.com/ahsankhan1911/reco-ecommerce#readme",
+  "devDependencies": {
+    "nodemon": "^1.18.9"
+  }
+}
