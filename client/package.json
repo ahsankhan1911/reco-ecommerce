@@ -1,0 +1,17 @@
+{
+  "name": "create-next-example-app",
+  "scripts": {
+    "dev": "next",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@material-ui/core": "^3.9.2",
+    "@material-ui/icons": "^3.0.2",
+    "classnames": "^2.2.6",
+    "next": "8.0.3",
+    "prop-types": "^15.7.2",
+    "react": "16.8.4",
+    "react-dom": "16.8.4"
+  }
+}
