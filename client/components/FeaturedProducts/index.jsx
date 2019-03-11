@@ -18,6 +18,7 @@ class FeaturedProducts extends React.Component {
     };
     this.handleChangeEnabled = this.handleChangeEnabled.bind(this);
   }
+
   componentDidMount() {
     // nouislider.create(this.refs.slider1, {
     //   start: [40],
@@ -32,6 +33,8 @@ class FeaturedProducts extends React.Component {
     //   range: { min: 0, max: 100 }
     // });
   }
+
+
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
   };
@@ -60,6 +63,7 @@ class FeaturedProducts extends React.Component {
         <div className={classes.container}>
           <div className={classes.title}>
             <h2>Featured Products</h2>
+                <ProductCard/>
                 <ProductCard/>
           </div>
         </div>

@@ -10,11 +10,11 @@ import ListItem from "@material-ui/core/ListItem";
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-// import { Apps, CloudDownload } from "@material-ui/icons";
+import { Apps, ShoppingCart } from "@material-ui/icons";
 
 // core components
 // import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
-// import Button from "components/CustomButtons/Button.jsx";
+import Button from "../../CustomButtons";
 
 import styles from "../../../assets/jss/headerLinksStyle.jsx";
 
@@ -49,48 +49,48 @@ class HeaderLinks extends React.Component {
         /> */}
       </ListItem>
       <ListItem className={classes.listItem}>
-        {/* <Button
-          href="https://www.creative-tim.com/product/material-kit-react"
+        <Button
+          href="/"
           color="transparent"
           target="_blank"
           className={classes.navLink}
         >
-          <CloudDownload className={classes.icons} /> Download
-        </Button> */}
+          <ShoppingCart className={classes.icons} /> Add to Cart
+        </Button>
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Tooltip
+        {/* <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
         //   placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          {/* <Button
+          <Button
             href="https://twitter.com/CreativeTim"
             target="_blank"
             color="transparent"
             className={classes.navLink}
           >
             <i className={classes.socialIcons + " fab fa-twitter"} />
-          </Button> */}
-        </Tooltip>
+          </Button>
+        </Tooltip> */}
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Tooltip
+        {/* <Tooltip
           id="instagram-facebook"
           title="Follow us on facebook"
-        //   placement={window.innerWidth > 959 ? "top" : "left"}
+          placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          {/* <Button
+          <Button
             color="transparent"
             href="https://www.facebook.com/CreativeTim"
             target="_blank"
             className={classes.navLink}
           >
             <i className={classes.socialIcons + " fab fa-facebook"} />
-          </Button> */}
-        </Tooltip>
+          </Button>
+        </Tooltip> */}
       </ListItem>
       <ListItem className={classes.listItem}>
         {/* <Tooltip
