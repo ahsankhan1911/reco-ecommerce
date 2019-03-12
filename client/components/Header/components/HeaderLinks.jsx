@@ -7,26 +7,50 @@ import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import Link from 'next/link'
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
 import { Apps, ShoppingCart } from "@material-ui/icons";
 
 // core components
-// import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
+import CustomDropdown from "../../CustomDropdown";
 import Button from "../../CustomButtons";
 
 import styles from "../../../assets/jss/headerLinksStyle.jsx";
 
 class HeaderLinks extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false
+    };
+  }
+
+  handleCartClick = () => {
+    this.setState(state => ({ open: !state.open }));
+  };
  
   render () {
     const { classes } = this.props;
-
+console.log(classes)
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        {/* <CustomDropdown
+     
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        {/* <Button
+          href="/"
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+        > */}
+          <ShoppingCart onClick={this.handleCartClick} style={{fontSize: 30, cursor: "pointer"}}/>
+        {/* </Button> */}
+        <CustomDropdown
+        open={this.state.open}
           noLiPadding
           buttonText="Components"
           buttonProps={{
@@ -46,17 +70,7 @@ class HeaderLinks extends React.Component {
               Documentation
             </a>
           ]}
-        /> */}
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Button
-          href="/"
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-          <ShoppingCart className={classes.icons} /> Add to Cart
-        </Button>
+        />
       </ListItem>
       <ListItem className={classes.listItem}>
         {/* <Tooltip

@@ -78,9 +78,10 @@ class Header extends React.Component {
       <AppBar className={appBarClasses}>
         <Toolbar className={classes.container}>
        {brandComponent}
-          <Hidden smDown implementation="css">
-            {/* {rightLinks} */}
-          </Hidden>
+       <HeaderLinks/>
+            {/* <Hidden smDown implementation="css">
+              {rightLinks}
+            </Hidden> */}
           <Hidden mdUp>
             <IconButton
               color="inherit"
@@ -102,10 +103,12 @@ class Header extends React.Component {
             onClose={this.handleDrawerToggle}
           >
             <div className={classes.appResponsive}>
-             <HeaderLinks/>
+           
+             {/* hello world */}
             </div>
           </Drawer>
         </Hidden>
+       
       </AppBar>
     );
   }
