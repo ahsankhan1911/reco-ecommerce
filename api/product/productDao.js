@@ -1,4 +1,3 @@
-
 /**                           Database Access Object                    */
 
 const {Product  } = require('./productModel'),
