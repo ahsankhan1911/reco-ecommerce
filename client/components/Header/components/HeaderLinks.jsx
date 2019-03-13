@@ -7,26 +7,50 @@ import React from "react";
 import withStyles from "@material-ui/core/styles/withStyles";
 import List from "@material-ui/core/List";
 import ListItem from "@material-ui/core/ListItem";
+import Link from 'next/link'
 import Tooltip from "@material-ui/core/Tooltip";
 
 // @material-ui/icons
-// import { Apps, CloudDownload } from "@material-ui/icons";
+import { Apps, ShoppingCart } from "@material-ui/icons";
 
 // core components
-// import CustomDropdown from "components/CustomDropdown/CustomDropdown.jsx";
-// import Button from "components/CustomButtons/Button.jsx";
+import CustomDropdown from "../../CustomDropdown";
+import Button from "../../CustomButtons";
 
 import styles from "../../../assets/jss/headerLinksStyle.jsx";
 
 class HeaderLinks extends React.Component {
+
+  constructor(props) {
+    super(props);
+    this.state = {
+      open: false
+    };
+  }
+
+  handleCartClick = () => {
+    this.setState(state => ({ open: !state.open }));
+  };
  
   render () {
     const { classes } = this.props;
-
+console.log(classes)
   return (
     <List className={classes.list}>
       <ListItem className={classes.listItem}>
-        {/* <CustomDropdown
+     
+      </ListItem>
+      <ListItem className={classes.listItem}>
+        {/* <Button
+          href="/"
+          color="transparent"
+          target="_blank"
+          className={classes.navLink}
+        > */}
+          <ShoppingCart onClick={this.handleCartClick} style={{fontSize: 30, cursor: "pointer"}}/>
+        {/* </Button> */}
+        <CustomDropdown
+        open={this.state.open}
           noLiPadding
           buttonText="Components"
           buttonProps={{
@@ -46,51 +70,41 @@ class HeaderLinks extends React.Component {
               Documentation
             </a>
           ]}
-        /> */}
+        />
       </ListItem>
       <ListItem className={classes.listItem}>
-        {/* <Button
-          href="https://www.creative-tim.com/product/material-kit-react"
-          color="transparent"
-          target="_blank"
-          className={classes.navLink}
-        >
-          <CloudDownload className={classes.icons} /> Download
-        </Button> */}
-      </ListItem>
-      <ListItem className={classes.listItem}>
-        <Tooltip
+        {/* <Tooltip
           id="instagram-twitter"
           title="Follow us on twitter"
         //   placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          {/* <Button
+          <Button
             href="https://twitter.com/CreativeTim"
             target="_blank"
             color="transparent"
             className={classes.navLink}
           >
             <i className={classes.socialIcons + " fab fa-twitter"} />
-          </Button> */}
-        </Tooltip>
+          </Button>
+        </Tooltip> */}
       </ListItem>
       <ListItem className={classes.listItem}>
-        <Tooltip
+        {/* <Tooltip
           id="instagram-facebook"
           title="Follow us on facebook"
-        //   placement={window.innerWidth > 959 ? "top" : "left"}
+          placement={window.innerWidth > 959 ? "top" : "left"}
           classes={{ tooltip: classes.tooltip }}
         >
-          {/* <Button
+          <Button
             color="transparent"
             href="https://www.facebook.com/CreativeTim"
             target="_blank"
             className={classes.navLink}
           >
             <i className={classes.socialIcons + " fab fa-facebook"} />
-          </Button> */}
-        </Tooltip>
+          </Button>
+        </Tooltip> */}
       </ListItem>
       <ListItem className={classes.listItem}>
         {/* <Tooltip

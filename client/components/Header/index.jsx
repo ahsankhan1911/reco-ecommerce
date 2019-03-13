@@ -14,6 +14,8 @@ import Drawer from "@material-ui/core/Drawer";
 // @material-ui/icons
 import Menu from "@material-ui/icons/Menu";
 // core components
+
+import HeaderLinks from './components/HeaderLinks.jsx'
 import headerStyle from "../../assets/jss/headerStyle.jsx";
 
 class Header extends React.Component {
@@ -58,12 +60,9 @@ class Header extends React.Component {
     }
   }
   render() {
-    console.log("propssss >> ",this.props)
     const {
       classes,
       color,
-      rightLinks,
-      leftLinks,
       brand,
       fixed,
       absolute
@@ -78,19 +77,11 @@ class Header extends React.Component {
     return (
       <AppBar className={appBarClasses}>
         <Toolbar className={classes.container}>
-          {leftLinks !== undefined ? brandComponent : null}
-          <div className={classes.flex}>
-            {leftLinks !== undefined ? (
-              <Hidden smDown implementation="css">
-                {leftLinks}
-              </Hidden>
-            ) : (
-              brandComponent
-            )}
-          </div>
-          <Hidden smDown implementation="css">
-            {rightLinks}
-          </Hidden>
+       {brandComponent}
+       <HeaderLinks/>
+            {/* <Hidden smDown implementation="css">
+              {rightLinks}
+            </Hidden> */}
           <Hidden mdUp>
             <IconButton
               color="inherit"
@@ -112,11 +103,12 @@ class Header extends React.Component {
             onClose={this.handleDrawerToggle}
           >
             <div className={classes.appResponsive}>
-              {leftLinks}
-              {rightLinks}
+           
+             {/* hello world */}
             </div>
           </Drawer>
         </Hidden>
+       
       </AppBar>
     );
   }
