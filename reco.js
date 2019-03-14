@@ -10,7 +10,10 @@ var sequelize = require('./lib/config/dbConfig')
 var express = require('express');
 var compression = require('compression');
 var bodyParser = require('body-parser');
-// var Product = require('./api/product/productModel')
+const Sequelize = require('sequelize')
+var Category = require('./api/category/categoryModel')
+
+var {Product_Category, Product} = require('./api/product/productModel')
 var app = express();
 var PORT = process.env.PORT || 5000
 console.log("Reco app starting on",process.env.NODE_ENV, 'environment')
@@ -72,6 +75,13 @@ app.get('/', (req, res) => {
 //   console.log(result.dataValues)
 // }).catch((err) => {
 //   console.log(err)
+// })
+
+// Product.findAll({
+//   include: [{
+//       model: Category,
+//       where: { category_id: 1 }
+//   }]
 // })
 
 

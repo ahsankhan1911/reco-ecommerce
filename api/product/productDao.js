@@ -1,9 +1,10 @@
 /**                           Database Access Object                    */
 
-const {Product  } = require('./productModel'),
+const {Product  , Product_Category} = require('./productModel'),
     Exception = require('../../lib/api-model/Exception'),
-    randomstring = require('randomstring');
-
+    randomstring = require('randomstring'),
+    Category = require('../category/categoryModel'),
+    Sequelize = require('sequelize')
 
 /**
  * @param {number} pageNo pageNo for list
@@ -28,17 +29,30 @@ function getProduct (pageNo, limit, gender, category) {
         where.category = category
     }
 
-   return Product.findAndCountAll({where: where})
+   return Product_Category.findAndCountAll({where: where})
     
      .then((data) => {
 
         let offset =  (pageNo - 1) * limit
 
-      return   Product.findAll({
+      return   Product_Category.findAll({
             where: where,
             limit: limit,
-            offset: offset
-        }).then((products) => {
+            offset: offset,
+            include: [{
+                  as: 'product',
+                  model: Product,
+                //   where: { product_id: Sequelize.col('product_category.product_id') }
+  },
+  
+//   {
+//       as: 'category',
+//       model: Category,
+//       where : {category_id: Sequelize.col('product_category.category_id')}
+//   }
+
+]
+        },).then((products) => {
 
             return {result: products , totalRecords: data.count}
         })
