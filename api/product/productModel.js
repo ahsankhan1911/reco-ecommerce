@@ -39,6 +39,7 @@ const Product = sequelize.define('product', {
 const Product_Attribute = sequelize.define('product_attribute', {
     product_id : {type: Sequelize.INTEGER(11), 
         // references: {model : 'product', key: 'product_id'}
+        primaryKey: true
     },
     attribute_value_id: {type: Sequelize.INTEGER(11), references: {model : 'attribute_value', key: 'attribute_value_id'}}
 })

@@ -1,6 +1,7 @@
 const sequelize = require('../../lib/config/dbConfig')
 const Sequelize = require('sequelize')
-const {Product, Product_Category} = require('../product/productModel')
+const {Product, Product_Category, Product_Attribute} = require('../product/productModel')
+const {Attribute, Attribute_Value} = require('../attributes/attributeModel')
 
 
 const Category = sequelize.define('category', {
@@ -14,18 +15,15 @@ const Category = sequelize.define('category', {
     timestamps: false,
     initialAutoIncrement: false,
     underscored: true,
-    // associations : function (model) {
-    //     Category.hasMany(model.Product, {as: 'products', foreignKey: 'product_id'})
-    // }
+ 
 }) 
 
 // Product.belongsTo(Product_Category, {as: 'category', foreignKey: 'product_id'})
-Product_Category.hasOne(Product, {as: 'product', foreignKey: 'product_id'})
-Product_Category.hasOne(Category, {as: 'category', foreignKey: 'category_id'})
-// Category.hasMany(Product, {as: 'products', foreignKey:'product_id'})
-// Category.associate  =  models => {
-// Category.hasMany(models.Product, {as: 'products', foreignKey: 'product_id'})
-// }
-// Category.hasMany(Product)
+Product_Category.belongsTo(Product, {as: 'product', foreignKey: 'product_id'})
+Product_Category.belongsTo(Category, {as: 'category', foreignKey: 'category_id'})
+Product_Category.belongsToMany(Product_Attribute, {as: 'attributes', through: 'attribute_value'})
+
+// Product_Category.belongsTo(Category, {as: 'category', foreignKey: 'category_id'})
+
 
 module.exports = Category
