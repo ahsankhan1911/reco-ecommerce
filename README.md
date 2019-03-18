@@ -1,5 +1,4 @@
 # reco-ecommerce
-some desc
 
 # Techlogy Used So Far
 
