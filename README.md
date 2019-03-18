@@ -1,9 +1,9 @@
 # reco-ecommerce
 some desc
 
-#Techlogy Used So Far
+# Techlogy Used So Far
 
-##Front End
+## Front End
 
 <ol>
 <li>React UI Library</li>
@@ -13,7 +13,7 @@ some desc
 </ol> 
 
 
-##Back end
+## Back end
 
 <ol>
 <li>NodeJs </li>
