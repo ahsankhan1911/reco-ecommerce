@@ -8,8 +8,6 @@ import classNames from "classnames";
 import withStyles from "@material-ui/core/styles/withStyles";
 import Button from "@material-ui/core/Button";
 
-// core components
-
 import buttonStyle from "../../assets/jss/buttonStyle.jsx";
 
 function RegularButton({ ...props }) {

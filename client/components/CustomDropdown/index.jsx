@@ -16,15 +16,10 @@ import Icon from "@material-ui/core/Icon";
 import Popper from "@material-ui/core/Popper";
 
 // core components
-import Button from "../CustomButtons";
-
 import customDropdownStyle from "../../assets/jss/customDropDownStyle.jsx";
 
 class CustomDropdown extends React.Component {
 
-//   handleClick = () => {
-//     this.setState(state => ({ open: !state.open }));
-//   };
   handleClose = param => {
     this.setState({ open: false });
     if (this.props && this.props.onClick) {
@@ -80,22 +75,6 @@ class CustomDropdown extends React.Component {
     }       
     return (
       <div>
-        {/* <div>
-          <Button
-            aria-label="Notifications"
-            aria-owns={open ? "menu-list" : null}
-            aria-haspopup="true"
-            {...buttonProps}
-            buttonRef={node => {
-              this.anchorEl = node;
-            }}
-            onClick={this.handleClick}
-          >
-            {icon}
-            {buttonText !== undefined ? buttonText : null}
-            {caret ? <b className={caretClasses} /> : null}
-          </Button>
-        </div> */}
         <Popper
           open={open}
           anchorEl={this.anchorEl}

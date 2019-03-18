@@ -40,12 +40,6 @@ app.use(compression());
 app.use('/images',express.static('./client/public/images'))
 
 
-//serving static files js/css only when environment is production otherwise will be dealed with Webpack-Dev-Server
-// if(process.env.NODE_ENV === 'production') {
-//   app.use(express.static('./client/build'))
-// }
-
-
 //CORS congif
 app.use((req, res, next) =>{
   res.header("Access-Control-Allow-Origin", "*");
@@ -70,25 +64,6 @@ app.get('/', (req, res) => {
   res.send("WELCOME TO RECO APP")
 })
 
-
-// Product.findOne({where: {product_id: 1}}).then((result) => {
-//   console.log(result.dataValues)
-// }).catch((err) => {
-//   console.log(err)
-// })
-
-// Product.findAll({
-//   include: [{
-//       model: Category,
-//       where: { category_id: 1 }
-//   }]
-// })
-
-
-// app.use(function (err, req, res, next) {
-//   res.status(err.status || 500);
-//   res.send("Error: " + err.message);
-// });
 
 app.listen(PORT,  () => {
   console.log('Running server on ' + PORT);

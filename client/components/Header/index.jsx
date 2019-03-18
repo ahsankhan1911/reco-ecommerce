@@ -79,9 +79,6 @@ class Header extends React.Component {
         <Toolbar className={classes.container}>
        {brandComponent}
        <HeaderLinks/>
-            {/* <Hidden smDown implementation="css">
-              {rightLinks}
-            </Hidden> */}
           <Hidden mdUp>
             <IconButton
               color="inherit"
@@ -104,7 +101,6 @@ class Header extends React.Component {
           >
             <div className={classes.appResponsive}>
            
-             {/* hello world */}
             </div>
           </Drawer>
         </Hidden>

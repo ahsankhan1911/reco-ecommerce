@@ -19,21 +19,6 @@ class FeaturedProducts extends React.Component {
     this.handleChangeEnabled = this.handleChangeEnabled.bind(this);
   }
 
-  componentDidMount() {
-    // nouislider.create(this.refs.slider1, {
-    //   start: [40],
-    //   connect: [true, false],
-    //   step: 1,
-    //   range: { min: 0, max: 100 }
-    // });
-    // nouislider.create(this.refs.slider2, {
-    //   start: [20, 60],
-    //   connect: [false, true, false],
-    //   step: 1,
-    //   range: { min: 0, max: 100 }
-    // });
-  }
-
 
   handleChange = name => event => {
     this.setState({ [name]: event.target.checked });
