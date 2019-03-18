@@ -58,7 +58,6 @@ function getProduct(pageNo, limit, gender, category) {
                     {
                         as: 'attributes',
                         model: Product_Attribute,
-                        // where: { product_id: Sequelize.col('product_category.product_id') },
                     }
 
                 ],
