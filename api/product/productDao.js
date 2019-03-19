@@ -34,8 +34,8 @@ function getProduct(pageNo, limit, gender, category) {
         .then((data) => {
 
         let offset = (pageNo - 1) * limit
-        let attributes = ['name', 'description','price','discounted_price','image','image_2','thumbnail','display']
-        let attributes2 = ['name', 'description']
+        let attributes = ['name','price','discounted_price','image','thumbnail','display']
+        let attributes2 = ['name']
             return Product_Category.findAll({
                 where: where,
                 limit: limit,
@@ -64,6 +64,30 @@ function getProduct(pageNo, limit, gender, category) {
 
 }
 
+function viewProduct (productId) {
+    let attributes = ['name','price','description','discounted_price','image','image_2','thumbnail','display']
+    let attributes2 = ['name']
+  return Product_Category.findOne({
+        where: { product_id: productId},
+        
+        include: [
+            {
+                as: 'product',
+                model: Product,
+                where: { product_id: Sequelize.col('product_category.product_id') },
+                attributes: attributes
+            },
+            {
+                as: 'category',
+                model: Category,
+                where: { category_id: Sequelize.col('product_category.category_id') },
+                attributes: attributes2
+            }
+        ],
+    })
+}
+
 module.exports = {
-    getProduct
+    getProduct,
+    viewProduct
 }

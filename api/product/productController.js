@@ -2,10 +2,7 @@ const axios = require('axios');
 const responseHandler = require('../../lib/responseHandler');
 const productDoa = require('./productDao.js')
 
-exports.addProduct = (request, response) => {
 
-   
-}
 
 
 exports.getProducts = (request, response) => {
@@ -19,5 +16,17 @@ exports.getProducts = (request, response) => {
 }).catch((error) => {
     responseHandler.sendError(response, error)
 })
+   
+}
+
+exports.viewProduct = (request, response) => {
+      let {productId} = request.params
+
+      productDoa.viewProduct(productId).then((result) => {
+          responseHandler.sendSuccess(response, result)
+      })
+      .catch((error) => {
+          responseHandler.sendError(response, error)
+      })
    
 }
