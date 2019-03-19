@@ -30,17 +30,17 @@
    <ol>
   <li>Install server packges on the root folder</li>
   
-
-   ` npm install `
+          npm install
    
    
-   <li>Install <a href="https://www.apachefriends.org/index.html" target=_blank">XAMPP</a> </li>
-   <li> Open XAMPP control panel and start Apache and MySQL servers</li>
+  <li>Install <a href="https://www.apachefriends.org/index.html" target=_blank">XAMPP</a> </li>
+  <li> Open XAMPP control panel and start Apache and MySQL servers</li>
   <li>After successful start go to <a href="http://localhost/" target="_blank">http://localhost/</a></li>
   <li>Then go to phpMyAdmin and create a Database named <b>reco</b></li>
   <li> Import data from /lib/data/reco.sql</li>
   <li> Then run this command </li>
-    ` npm install `
+   
+     npm run dev
   </ol>
   
   ### Note:
