@@ -1,7 +1,7 @@
 -- Create tshirtshop tables
 
 -- Create department table
-CREATE TABLE `department` (
+CREATE TABLE `departments` (
   `department_id` INT            NOT NULL  AUTO_INCREMENT,
   `name`          VARCHAR(100)   NOT NULL,
   `description`   VARCHAR(1000),
@@ -9,7 +9,7 @@ CREATE TABLE `department` (
 ) ENGINE=MyISAM;
 
 -- Create category table
-CREATE TABLE `category` (
+CREATE TABLE `categories` (
   `category_id`   INT            NOT NULL  AUTO_INCREMENT,
   `department_id` INT            NOT NULL,
   `name`          VARCHAR(100)   NOT NULL,
@@ -19,7 +19,7 @@ CREATE TABLE `category` (
 ) ENGINE=MyISAM;
 
 -- Create product table
-CREATE TABLE `product` (
+CREATE TABLE `products` (
   `product_id`       INT           NOT NULL  AUTO_INCREMENT,
   `name`             VARCHAR(100)  NOT NULL,
   `description`      VARCHAR(1000) NOT NULL,
@@ -34,14 +34,14 @@ CREATE TABLE `product` (
 ) ENGINE=MyISAM;
 
 -- Create product_category table
-CREATE TABLE `product_category` (
+CREATE TABLE `product_categories` (
   `product_id`  INT NOT NULL,
   `category_id` INT NOT NULL,
   PRIMARY KEY (`product_id`, `category_id`)
 ) ENGINE=MyISAM;
 
 -- Create attribute table (stores attributes such as Size and Color)
-CREATE TABLE `attribute` (
+CREATE TABLE `attributes` (
   `attribute_id` INT          NOT NULL  AUTO_INCREMENT,
   `name`         VARCHAR(100) NOT NULL, -- E.g. Color, Size
   PRIMARY KEY (`attribute_id`)
@@ -49,7 +49,7 @@ CREATE TABLE `attribute` (
 
 
 -- Create attribute_value table (stores values such as Yellow or XXL)
-CREATE TABLE `attribute_value` (
+CREATE TABLE `attribute_values` (
   `attribute_value_id` INT          NOT NULL  AUTO_INCREMENT,
   `attribute_id`       INT          NOT NULL, -- The ID of the attribute
   `value`              VARCHAR(100) NOT NULL, -- E.g. Yellow
@@ -58,7 +58,7 @@ CREATE TABLE `attribute_value` (
 ) ENGINE=MyISAM;
 
 -- Create product_attribute table (associates attribute values to products)
-CREATE TABLE `product_attribute` (
+CREATE TABLE `product_attributes` (
   `product_id`         INT NOT NULL,
   `attribute_value_id` INT NOT NULL,
   PRIMARY KEY (`product_id`, `attribute_value_id`)
@@ -66,7 +66,7 @@ CREATE TABLE `product_attribute` (
 
 
 -- Create shopping_cart table
-CREATE TABLE `shopping_cart` (
+CREATE TABLE `shopping_carts` (
   `item_id`     INT           NOT NULL  AUTO_INCREMENT,
   `cart_id`     CHAR(32)      NOT NULL,
   `product_id`  INT           NOT NULL,
@@ -98,7 +98,7 @@ CREATE TABLE `orders` (
 ) ENGINE=MyISAM;
 
 -- Create order_details table
-CREATE TABLE `order_detail` (
+CREATE TABLE `order_details` (
   `item_id`      INT           NOT NULL  AUTO_INCREMENT,
   `order_id`     INT           NOT NULL,
   `product_id`   INT           NOT NULL,
@@ -111,14 +111,14 @@ CREATE TABLE `order_detail` (
 ) ENGINE=MyISAM;
 
 -- Create shipping_region table
-CREATE TABLE `shipping_region` (
+CREATE TABLE `shipping_regions` (
   `shipping_region_id` INT          NOT NULL  AUTO_INCREMENT,
   `shipping_region`    VARCHAR(100) NOT NULL,
   PRIMARY KEY  (`shipping_region_id`)
 ) ENGINE=MyISAM;
 
 -- Create customer table
-CREATE TABLE `customer` (
+CREATE TABLE `customers` (
   `customer_id`        INT           NOT NULL AUTO_INCREMENT,
   `name`               VARCHAR(50)   NOT NULL,
   `email`              VARCHAR(100)  NOT NULL,
@@ -140,7 +140,7 @@ CREATE TABLE `customer` (
 ) ENGINE=MyISAM;
 
 -- Create shipping table
-CREATE TABLE `shipping` (
+CREATE TABLE `shippings` (
   `shipping_id`        INT            NOT NULL AUTO_INCREMENT,
   `shipping_type`      VARCHAR(100)   NOT NULL,
   `shipping_cost`      NUMERIC(10, 2) NOT NULL,
@@ -150,7 +150,7 @@ CREATE TABLE `shipping` (
 ) ENGINE=MyISAM;
 
 -- Create tax table
-CREATE TABLE `tax` (
+CREATE TABLE `taxes` (
   `tax_id`         INT            NOT NULL  AUTO_INCREMENT,
   `tax_type`       VARCHAR(100)   NOT NULL,
   `tax_percentage` NUMERIC(10, 2) NOT NULL,
@@ -158,7 +158,7 @@ CREATE TABLE `tax` (
 ) ENGINE=MyISAM;
 
 -- Create audit table
-CREATE TABLE `audit` (
+CREATE TABLE `audits` (
   `audit_id`       INT      NOT NULL AUTO_INCREMENT,
   `order_id`       INT      NOT NULL,
   `created_on`     DATETIME NOT NULL,
@@ -169,7 +169,7 @@ CREATE TABLE `audit` (
 ) ENGINE=MyISAM;
 
 -- Create review table
-CREATE TABLE `review` (
+CREATE TABLE `reviews` (
   `review_id`   INT      NOT NULL  AUTO_INCREMENT,
   `customer_id` INT      NOT NULL,
   `product_id`  INT      NOT NULL,

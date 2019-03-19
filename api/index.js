@@ -1,6 +1,5 @@
 const responseHandler = require('../lib/responseHandler')
 const adminRouter = require('./admin')
-const categoryRouter = require('./point')
 const productRouter = require('./product')
 
 
