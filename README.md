@@ -45,7 +45,7 @@
         npm run dev
   </ol>
   
-  ### Note:
+  #### Note:
   <p>if nodemon is not installed then install it globally using: </p>
         
         npm install nodemon -g
