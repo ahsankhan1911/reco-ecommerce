@@ -30,7 +30,7 @@
    <ol>
   <li>Install server packges on the root folder</li>
   
-          npm install
+        npm install
    
    
   <li>Install <a href="https://www.apachefriends.org/index.html" target=_blank">XAMPP</a> </li>
@@ -40,7 +40,7 @@
   <li> Import data from /lib/data/reco.sql</li>
   <li> Then run this command </li>
    
-     npm run dev
+        npm run dev
   </ol>
   
   ### Note:
