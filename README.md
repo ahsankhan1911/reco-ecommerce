@@ -29,6 +29,7 @@
 
    <ol>
   <li>Install server packges on the root folder</li>
+   
   
         npm install
    
@@ -39,6 +40,7 @@
   <li>Then go to phpMyAdmin and create a Database named <b>reco</b></li>
   <li> Import data from /lib/data/reco.sql</li>
   <li> Then run this command </li>
+   
    
         npm run dev
   </ol>
